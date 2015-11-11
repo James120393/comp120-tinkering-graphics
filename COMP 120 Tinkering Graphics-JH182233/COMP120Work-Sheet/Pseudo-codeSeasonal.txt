@@ -1,0 +1,26 @@
+Seasonal biodome Mood Board
+
+Start
+
+Show four pictures
+Click one to begin
+
+LOOP
+  The scene begins with winter
+  Tree is covered in snow with snow falling
+
+  Click again and snow dissapears
+  tree now grows with rain falling
+
+  Click again rain stops
+  Tree now fully grown
+
+  Click again wind picks up
+  Tree leafs turn brown begin to fall
+
+  Click again to go to Winter again
+
+IF esc key pressed
+ then End program
+
+End

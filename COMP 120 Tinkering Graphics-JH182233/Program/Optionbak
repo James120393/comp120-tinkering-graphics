@@ -1,0 +1,134 @@
+import time
+import sys
+import random
+
+
+#This is that stored pictures
+def season():
+    setMediaPath("E:\COMP 120 Tinkering Graphics\Pictures")
+    global picture1 
+    picture1 = makePicture("Tree-Four-Seasons.jpg")
+    global picture2 
+    picture2 = makePicture("Tree-Winter.jpg")
+    global picture3 
+    picture3 = makePicture("Tree-Spring.jpg")
+    global picture4 
+    picture4 = makePicture("Tree-Summer.jpg")
+    global picture5 
+    picture5 = makePicture("Tree-Autumn.jpg")  
+    global picture6
+    picture6 = makePicture("tree.jpg")
+    global picture7
+    picture7 = makePicture("test.jpg")
+
+
+#The main function for the program
+def main():
+#create an empty picture and populate it with others 
+    season()
+    startX = 0
+    startY = 0
+    global pic
+    pic = makeEmptyPicture(1025, 1110, black) 
+    repaint (pic)
+    time.sleep(1)  
+    copyInto(picture2, pic, startX, startY)
+    repaint (pic)
+    
+    startX = 512
+    startY = 0    
+    time.sleep(1) 
+    copyInto(picture3, pic, startX, startY)
+    repaint (pic)
+    
+    startX = 0
+    startY = 554  
+    time.sleep(1)  
+    copyInto(picture4, pic, startX, startY)
+    repaint (pic)
+    
+    startX = 512
+    startY = 554  
+    time.sleep(1)  
+    copyInto(picture5, pic, startX, startY)
+    repaint (pic)
+    request()
+    
+#Now the program will ask for a season that you would like to view
+def request():
+    startX = 230
+    startY = 300   
+    season = requestString("What season would you like to activate?")
+    if String(season) =="Winter":
+     blackout()
+     copyInto(picture2, pic, startX, startY)
+     repaint(pic)
+    elif String(season) =="Spring":
+     blackout()
+     copyInto(picture3, pic, startX, startY)
+     repaint(pic)
+    elif String(season) =="Summer":
+     blackout()
+     copyInto(picture4, pic, startX, startY)
+     repaint(pic)
+    elif String(season) =="Autumn":
+     blackout()
+     copyInto(picture5, pic, startX, startY)
+     repaint(pic)
+    elif String(season) == "":
+     blackout()
+     fourseasons()
+    time.sleep(3)
+    endSeason = requestString("Would you like another Y/N?")
+    if String(endSeason) == "Y":
+     blackout()
+     show(picture1)
+     return(season)    
+    elif String(endSeason) == "N":
+     blackout()
+     show(picture1)
+     showInformation("Thank you for using BioSeasons")
+     sys.exit(0)
+    else:       
+     request()
+     
+     
+#Displays all four seasons
+def fourseasons():
+     blackout()
+     startX = 0
+     startY = 1
+     copyInto(picture1, pic, startX, startY)
+     repaint(pic) 
+
+#Slowly blacken out the image  
+def blackout():
+  startX = 0
+  startY = 0
+  w = getWidth(pic)
+  h = getHeight(pic)
+  
+  for y in range(0,h):
+   for x in range(0,w):
+    px = getPixel(pic, x, y)
+    setColor(px,black)
+   repaint (pic)
+   
+def rain():
+  season()
+  diagonalLines(picture2)
+  show(picture2)
+def horizontalLines(src):
+  for x in range(0, getHeight(src),5):
+   for y in range(0, getWidth(src)):
+    setColor(getPixel(src,y,x),gray)
+def verticalLines(src):
+  for x in range(0, getWidth(src),5):
+   for y in range(0, getHeight(src)):
+    setColor(getPixel(src,x,y),gray)
+def diagonalLines(src):
+  width = getWidth(src)
+  height = getHeight(src)
+  space = 10
+  for x in range(0, 2*width, space):
+   addLine(src, x, 0, x-width, height)

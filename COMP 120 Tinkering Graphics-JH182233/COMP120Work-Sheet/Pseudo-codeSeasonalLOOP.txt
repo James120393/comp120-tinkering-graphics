@@ -1,0 +1,29 @@
+Seasonal biodome Mood Board
+
+Start
+
+Show four pictures
+Timed Delay
+
+LOOP
+  Winter slide will appear
+  Tree is covered in snow with snow falling
+
+  Timed Delay and snow dissapears
+  Tree now grows with rain falling
+
+  Timed Delay rain stops
+  Tree now fully grown
+
+  Timed Delay wind picks up
+  Tree leafs turn brown begin to fall
+
+  Timed Delay go to Winter again
+
+IF LOOP is < 4 times run
+  then play LOOP
+
+Else
+  End Program
+
+End
