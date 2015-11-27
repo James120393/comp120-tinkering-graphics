@@ -102,7 +102,7 @@ def fourseasons():
      repaint(pic) 
 
 #Slowly blacken out the image  
-def blackout():
+class blackout():
   startX = 0
   startY = 0
   w = getWidth(pic)
@@ -114,6 +114,8 @@ def blackout():
     setColor(px,black)
    repaint (pic)
    
+
+#This section is not complete do not use.   
 def rain():
   season()
   diagonalLines(picture2)
