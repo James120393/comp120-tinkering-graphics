@@ -1,0 +1,20 @@
+Sci-fi Mood Board
+
+Start
+
+Begin with a set of Sci-fi pictures laid out on screen
+
+User will click on a picture
+Picture will brighten
+Text will appear on the picture
+Other pictures will fade out
+
+User clicks again
+Text will disapear
+Other pictures fade in
+User will click on another picture
+
+IF user presses Esc
+ Then program will exit
+
+End
