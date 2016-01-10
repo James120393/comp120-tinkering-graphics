@@ -15,6 +15,13 @@ pic = makeEmptyPicture(1025, 1110, black)
 
 #The main function for the program
 def main():
+    copy()
+    request()
+    request2()
+    
+    
+
+def copy():
 #create an empty picture and populate it with others 
     startX = 0
     startY = 0 
@@ -40,11 +47,10 @@ def main():
     time.sleep(1)  
     copyInto(picwinter, pic, startX, startY)
     repaint (pic)
-    request()
     
     
     
-#Now the program will ask for a season that you would like to view
+#Now the program will ask for a season that you would like to view, you must choose which one.
 def request():
     startX = 230
     startY = 300   
@@ -54,29 +60,23 @@ def request():
        copyInto(picwinter, pic, startX, startY)
        repaint(pic)
        time.sleep(2)
-       request2()
     elif String(season) =="Spring":
        blackoutleft()  
        copyInto(picspring, pic, startX, startY)
        repaint(pic)
        time.sleep(2)
-       request2()
     elif String(season) =="Summer":
        blackoutleft()   
        copyInto(picsummer, pic, startX, startY)
        repaint(pic)
        time.sleep(2)
-       request2()
     elif String(season) =="Autumn":
        blackoutleft()   
        copyInto(picautumm, pic, startX, startY)
        repaint(pic)
        time.sleep(2)
-       request2()
     else:
-       blackouttop()
-       request2()
-       time.sleep(2)
+       time.sleep(2)    
      
     
 
@@ -86,7 +86,7 @@ def request2():
     if String(endSeason) == "Y":
        copyInto(picfour, pic, 0, 0)
        repaint(pic)
-       playWinter()
+       beginWinter()
     elif String(endSeason) == "N":
        blackouttop()
        copyInto(picfour, pic, 0, 0)
@@ -99,7 +99,7 @@ def request2():
      
 
 #Thie function will play through the seasons while calling on the merge function to produce a better flow.
-def playWinter():
+def beginWinter():
     startX = 230
     startY = 300
     blackoutleft()
@@ -136,7 +136,7 @@ def playSummer():
     startX = 230
     startY = 300
     source1 = picsummer
-    source2 = picautumm
+    source2 = picautumn
     merge(source1, source2, picM)
     time.sleep(2)
     copyInto(picautumm, pic, startX, startY)
@@ -170,6 +170,8 @@ def blackouttop():
         px = getPixel(pic, x, y)
         setColor(px,black)
      repaint (pic)
+     
+     
 
 #Blackens out the image from left to right
 def blackoutleft():
