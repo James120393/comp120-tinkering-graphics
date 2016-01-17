@@ -1,8 +1,9 @@
 import time
 
 
-#This is the stored pictures, calling "global" so the entire program can use them.
-setMediaPath(r"C:\Users\James\Documents\Uni\comp120-tinkering-graphics\Pictures") 
+'''These are the stored pictures'''
+'''Sourced from http://iryinggfm.deviantart.com/'''
+setMediaPath() 
 pic_seasons = makePicture("Tree-Four-Seasons.jpg") 
 pic_winter = makePicture("Tree-Winter.jpg") 
 pic_spring = makePicture("Tree-Spring.jpg") 
@@ -12,9 +13,8 @@ pic_merge = makeEmptyPicture(513, 556, black)
 pic_main = makeEmptyPicture(1025, 1110, black)
 
 
-
+'''create an empty picture and populate it with others'''
 def copy():
-#create an empty picture and populate it with others
 #A new X,Y needs to be stated before each picture is copied into the canvas to ensure that thery appear with the correct POS. 
     startX = 0
     startY = 0 
@@ -44,7 +44,7 @@ def copy():
     
     
     
-#Now the program will ask for a season that you would like to view, you must choose which one.
+'''Now the program will ask for a season that you would like to view, you must choose which one'''
 def request():
     startX = 230
     startY = 300   
@@ -74,7 +74,7 @@ def request():
      
     
 
-#another request, a simple Y/N question to see if you want to continue, it will either end for "N" or continue if "Y"    
+'''Another request, a simple Y/N question to see if you want to continue, it will either end for "N" or continue if "Y"'''   
 def nextRequest():
     endSeason = requestString("Would you like to view more Y/N?")
     if String(endSeason) == "Y":
@@ -92,7 +92,7 @@ def nextRequest():
      
      
 
-#Thie function will play through the seasons while calling on the merge function to produce a better flow.
+'''Thie function will play through the seasons while calling on the merge function to produce a better flow'''
 def beginWinter():
     startX = 230
     startY = 300
@@ -112,7 +112,7 @@ def beginWinter():
     nextRequest()  
     
     
-#This will use the merge function and copy the new picture into the old canvas, without opening a new window.
+'''This will use the merge function and copy the new picture into the old canvas, without opening a new window'''
 def playNextSeason(source_1, source_2):
     startX = 230
     startY = 300
@@ -124,7 +124,7 @@ def playNextSeason(source_1, source_2):
     
          
    
-#Slowly blacken out the image from the top to bottom
+'''Slowly blacken out the image from the top to bottom'''
 def blackouttop():
   startX = 0
   startY = 0
@@ -139,7 +139,7 @@ def blackouttop():
      
      
 
-#Blackens out the image from left to right
+'''Blackens out the image from left to right'''
 def blackoutleft():
   startX = 0
   startY = 0
@@ -157,8 +157,8 @@ def blackoutleft():
    
    
 
-#here the merge functions gets its sources from the selection made in the request function, e.g. if Winter was choosen the source1 = Winter and source2 = Spring.
-#This is also a modified version of the Blending Pictures algorithm in the Intro to Python Book. by Mark J. Guzdial pages:184-186   
+'''Here the merge functions gets its sources from the selection made in the request function, e.g. if Winter was choosen the source1 = Winter and source2 = Spring'''
+'''This is also a modified version of the Blending Pictures algorithm in the Intro to Python Book. by Mark J. Guzdial pages:184-186'''
 def merge(source_1, source_2, pic_merge):
   startX = 230
   startY = 300
@@ -189,7 +189,7 @@ def merge(source_1, source_2, pic_merge):
   
   
   
-#The main function for the program
+'''The main function for the program'''
 def main():
     copy()
     request()
